@@ -13,15 +13,27 @@ $x^2$
 import { saveAs } from "file-saver";
 
 export const getPDF = async () => {
+	// Create array of paths. [1] = folder name, [2] = file name.
 	const paths = window.location.pathname
 		.split("/")
 		.filter((e) => e.length > 0)
 		.map((e) => decodeURI(e));
-	// console.log(`${paths[0]} - ${paths[1]}.pdf`);
-	let response = await fetch(
-		"https://cdn.discordapp.com/attachments/799412047501590528/876144049067806790/Getting_Started.pdf"
+	// Use dynamic url to function on both localhost and production.
+	const url = new URL(
+		`${window.location.protocol}//${window.location.hostname}${
+			window.location.port ? `:${window.location.port}` : ""
+		}/api/pdf`
 	);
-	const data = await response.blob();
-	const blob = new Blob(data, { type: "application/pdf" });
-	saveAs(blob, `${paths[0]} - ${paths[1]}.pdf`);
+	// Pass current URL to serverless function.
+	url.search = new URLSearchParams({ url: window.location.href }).toString();
+	// Get data from serverless
+	let response = await fetch(url);
+	// Parse data
+	const data = await response.text();
+	// Log data
+	console.log(data);
+	// Everything below here will be useful later
+	// const data = await response.blob();
+	// const blob = new Blob(data, { type: "application/pdf" });
+	// saveAs(blob, `${paths[0]} - ${paths[1]}.pdf`);
 };

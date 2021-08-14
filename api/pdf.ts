@@ -1,8 +1,19 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
+import fs from "fs";
 
 export default function (req: VercelRequest, res: VercelResponse) {
-	// const { name = "World" } = req.query;
-	res.send(req.body);
+	const url = new URL(req.query?.url as string);
+	const paths = url.pathname
+		.split("/")
+		.filter((e) => e.length > 0)
+		.map((e) => decodeURI(e));
+	const className = paths[0];
+	const docName = paths[1];
 
-	// https://cors-anywhere.herokuapp.com/https://cdn.discordapp.com/attachments/799412047501590528/876144049067806790/Getting_Started.pdf
+	fs.writeFile("helloworld.txt", "Hello World!", function (err) {
+		if (err) return console.log(err);
+		console.log("Hello World > helloworld.txt");
+	});
+
+	res.send(__dirname);
 }
