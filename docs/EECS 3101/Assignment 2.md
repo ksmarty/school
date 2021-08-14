@@ -1,5 +1,4 @@
 <div class="title-page">
-        <h1>Assignment 2</h1>
         <h3>Kyle Schwartz</h3>
         <h3>216213621</h3>
         <h3>EECS 3101</h3>

@@ -5,11 +5,11 @@ slug: /
 
 # Classes
 
-> A repository of all my school assignments & Notes
+> A repository of all my school assignments & notes
 
 ## Create a new assignment
 
-1. Copy `template.md` to your chosen directory.
+1. Copy `template.mdx` to your chosen directory.
 2. Use the [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) extension to convert for submission.
 
 
