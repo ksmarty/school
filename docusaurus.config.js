@@ -125,6 +125,7 @@ module.exports = {
 			require.resolve("@easyops-cn/docusaurus-search-local"),
 			{
 				hashed: true,
+				docsRouteBasePath: "/",
 			},
 		],
 		"@docusaurus/plugin-ideal-image",
