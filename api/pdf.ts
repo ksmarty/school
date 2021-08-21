@@ -19,10 +19,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 		contentSelector: "article",
 		paginationSelector: "lmao-nope",
 		excludeSelectors: [
-			".margin-vert--xl a",
-			".pagination-nav__item",
-			".h1Heading_27L5",
-			".tocCollapsible_1PrD",
+			".margin-vert--xl a,.pagination-nav__item,.h1Heading_27L5,.tocCollapsible_1PrD",
 		],
 		coverTitle: docName,
 		disableTOC: true,
