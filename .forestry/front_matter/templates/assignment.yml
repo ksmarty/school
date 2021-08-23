@@ -1,6 +1,11 @@
 ---
 label: Assignment
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
 pages:
 - docs/Co-op/Work Term Report 2.mdx
