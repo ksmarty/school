@@ -1,5 +1,6 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import mrpdf from "mr-pdf";
+import chromium from "chrome-aws-lambda";
 
 export default async function (req: VercelRequest, res: VercelResponse) {
 	const url = new URL(req.query?.url as string);
@@ -14,6 +15,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 		.toLocaleString("en-CA", { timeZone: "America/Toronto" })
 		.split(",", 1)[0];
 
+	chromium.args;
+
 	const file = await mrpdf({
 		initialDocURLs: [url.toString()],
 		contentSelector: "article",
@@ -24,6 +27,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 		coverTitle: docName,
 		disableTOC: true,
 		coverSub: `Kyle Schwartz<br/>216213621<br/>${className}<br/>${date}`,
+		puppeteerArgs: {
+			args: chromium.args,
+			defaultViewport: chromium.defaultViewport,
+			executablePath: await chromium.executablePath,
+			headless: chromium.headless,
+			ignoreHTTPSErrors: true,
+		},
 	});
 
 	res.send(file);
