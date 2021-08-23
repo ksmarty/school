@@ -15,8 +15,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 		.toLocaleString("en-CA", { timeZone: "America/Toronto" })
 		.split(",", 1)[0];
 
-	chromium.args;
-
 	const file = await mrpdf({
 		initialDocURLs: [url.toString()],
 		contentSelector: "article",
