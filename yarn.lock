@@ -6408,7 +6408,7 @@ module-alias@^2.2.2:
 
 "mr-pdf@https://github.com/ksmarty/mr-pdf":
   version "1.0.7"
-  resolved "https://github.com/ksmarty/mr-pdf#56746632151853af8aadecac66cb8e90d479ac37"
+  resolved "https://github.com/ksmarty/mr-pdf#aaab14744091b851e062d4f7c494b5dbce270715"
   dependencies:
     chalk "^3.0.0"
     chrome-aws-lambda "^10.1.0"
