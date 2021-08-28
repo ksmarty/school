@@ -1,6 +1,5 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import mrpdf from "mr-pdf";
-import chrome from "chrome-aws-lambda";
 
 export default async function (req: VercelRequest, res: VercelResponse) {
 	const url = new URL(req.query?.url as string);
@@ -25,11 +24,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 		coverTitle: docName,
 		disableTOC: true,
 		coverSub: `Kyle Schwartz<br/>216213621<br/>${className}<br/>${date}`,
-		puppeteerArgs: {
-			args: chrome.args,
-			executablePath: await chrome.executablePath,
-			headless: chrome.headless,
-		},
 	});
 
 	res.send(file);

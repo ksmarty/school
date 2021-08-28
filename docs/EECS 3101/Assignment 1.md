@@ -185,7 +185,10 @@ Oreo collected all the answers of his students in an array $A[1..n]$ where $A[i]
         
         return false
     ```
+
+
 3. The above algorithm shares a lot of similarities with merge sort. Namely, in the divide step. The array is continuously split in two, meaning there are $\log(n)$ divisions. At the base, there are $n$ nodes, meaning it is $\Theta(n \log n)$
+
 $$
 T(n) = \begin{cases}
    \Theta(1) & n=1 \\
@@ -202,7 +205,7 @@ T(n) = \begin{cases}
 \end{aligned}
 $$
 
-1. The returned number corresponds to the day of the week starting with Sunday as 1, and ending with Saturday as 7.
+4. The returned number corresponds to the day of the week starting with Sunday as 1, and ending with Saturday as 7.
     ```kotlin
     fun quizDate7(A[1..n])
         B = [0, 0, 0, 0, 0, 0, 0]
