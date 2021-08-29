@@ -6393,7 +6393,7 @@ module-alias@^2.2.2:
 
 "mr-pdf@https://github.com/ksmarty/mr-pdf":
   version "1.0.7"
-  resolved "https://github.com/ksmarty/mr-pdf#c8b25135c2b145cbbaae63b26ee90d1d5909e4ee"
+  resolved "https://github.com/ksmarty/mr-pdf#f36ceced8653901a723855986bb7428bd4e90e96"
   dependencies:
     chrome-aws-lambda "7.0.0"
     puppeteer-core "7.1.0"
