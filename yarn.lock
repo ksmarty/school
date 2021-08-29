@@ -6392,8 +6392,8 @@ module-alias@^2.2.2:
   integrity sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==
 
 "mr-pdf@https://github.com/ksmarty/mr-pdf":
-  version "1.0.7"
-  resolved "https://github.com/ksmarty/mr-pdf#d5e4722946fa61f6dc44994c51700dd60b53e71a"
+  version "1.0.0"
+  resolved "https://github.com/ksmarty/mr-pdf#a675c80bbb7432fcd306675e25b74613475abc9d"
   dependencies:
     chrome-aws-lambda "7.0.0"
     puppeteer-core "7.1.0"
