@@ -6,21 +6,22 @@ export const Download = () => {
 	let [loading, setLoading] = useState(false);
 
 	const getPDF = async () => {
+		const loc = window.location;
 		setLoading(true);
 		// Create array of paths. [1] = folder name, [2] = file name.
-		const paths = window.location.pathname
+		const paths = loc.pathname
 			.split("/")
 			.filter((e) => e.length > 0)
 			.map((e) => decodeURI(e));
 		// Use dynamic url to function on both localhost and production.
 		const url = new URL(
-			`${window.location.protocol}//${window.location.hostname}${
-				window.location.port ? `:${window.location.port}` : ""
+			`${loc.protocol}//${loc.hostname}${
+				loc.port ? `:${loc.port}` : ""
 			}/api/pdf`
 		);
 		// Pass current URL to serverless function.
 		url.search = new URLSearchParams({
-			url: window.location.href,
+			url: loc.href,
 		}).toString();
 		// Get data from serverless
 		let response = await fetch(url);
