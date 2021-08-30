@@ -24,7 +24,7 @@
 		"file-loader": "^6.2.0",
 		"file-saver": "^2.0.5",
 		"hast-util-is-element": "1.1.0",
-		"mr-pdf": "https://github.com/ksmarty/mr-pdf",
+		"pdf-press": "^1.0.1",
 		"prism-react-renderer": "^1.2.1",
 		"raw-loader": "^4.0.2",
 		"react": "^17.0.1",

@@ -1,5 +1,5 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import mrpdf from "mr-pdf";
+import pdf from "pdf-press";
 
 export default async function (req: VercelRequest, res: VercelResponse) {
 	const url = new URL(req.query?.url as string);
@@ -14,7 +14,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 		.toLocaleString("en-CA", { timeZone: "America/Toronto" })
 		.split(",", 1)[0];
 
-	const file = await mrpdf({
+	const file = await pdf({
 		initialDocURLs: [url.toString()],
 		contentSelector: "article",
 		paginationSelector: "lmao-nope",
